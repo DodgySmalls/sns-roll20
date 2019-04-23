@@ -1,0 +1,530 @@
+.sheet-wrapper {
+    --bgc: #222222;
+    --fgred: #FF0000;
+    --fgstamina: #00FF00;
+
+    color: #FFFFFF;
+    background-color: var(--bgc);
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    
+    font-family: 'Cambria';
+}
+
+input {
+    background-color: var(--bgc);
+    color: #FFFFFF;
+    border: none;
+    margin: 5px;
+    border-bottom: solid 2px #444444;
+}
+
+input[type=text] {
+    width: 150px;
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--fgred);
+    z-index:3;
+}
+
+
+/********************************
+        HEADER
+********************************/
+
+.sheet-splash {
+    background-image: url("https://i.imgur.com/tS0zPbA.png");
+    background-size: cover;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+}
+
+.sheet-row-under-field td {
+    vertical-align: top;
+    text-align: center;
+}
+
+.sheet-header-fields {
+    height: 50px;
+}
+
+.sheet-header-fields td {
+    vertical-align: bottom;
+}
+
+
+/********************************
+        CONTAINERS
+********************************/
+
+.sheet-row-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.sheet-column {
+    flex-grow: 1;
+    display: block;
+}
+
+
+.sheet-centered-number {
+    padding-left: 15px;
+    text-align: center;
+}
+
+
+.sheet-resources, .sheet-attributes-aptitudes, .sheet-skills, .sheet-languages, .sheet-weapons, .sheet-armour {
+    border: solid 1px #FFFFFF;
+    border-radius: 9px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.sheet-numerator {
+    border-bottom: solid 2px #444444;
+}
+
+.sheet-numerator input {
+    display: inline-block;
+    border: none;
+    margin: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.sheet-denominator {
+    text-align: center;
+}
+
+.sheet-denominator input {
+    font-size: 1.7em;
+    display: inline;
+    border: none;
+    margin: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+/********************************
+        RESOURCES
+********************************/
+
+.sheet-resource {
+    display: inline-block;
+    width: 110px;
+    margin-right: 8px;
+}
+
+.sheet-resource-radial {
+    display: inline-block;
+}
+
+.sheet-value-with-temp input[type="number"]:first-child {
+    font-size: 1.3em;
+}
+
+.sheet-value-with-temp input[type="number"]:nth-of-type(2) {
+    font-size: 1em;
+}
+
+
+.sheet-resource-hp .sheet-numerator input[type="number"]:first-child {
+    color: var(--fgred);
+}
+
+.sheet-resource-stamina .sheet-numerator input[type="number"]:first-child {
+    color: var(--fgstamina);
+}
+
+.sheet-resource-fate label input::after {
+    display: none;
+}
+
+.sheet-resource-fate {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.sheet-resource-fate input {
+    transform: scale(1.2);
+    margin-right: 20px;
+    visibility: hidden;
+    
+}
+
+.sheet-resource-fate input::after {
+    background-color: #000000;
+    border-radius: 12px;
+    visibility: visible;
+    position: relative;
+    right: 4px;
+    content:"t";
+    font-family:"dicefontd20";
+    font-size: 1.7em;
+    color: #444444;
+    transition: all 0.3 ease;
+    padding:4px;
+    padding-right:5px;
+    font-weight: bold;
+}
+
+.sheet-resource-fate input:checked::after {
+    color: var(--fgred);
+}
+
+.sheet-resource-fate input:checked ~ input::after {
+    color: var(--fgred);
+}
+
+.sheet-resource-fate label {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.sheet-resource-fate label span {
+    color: #FFFFFF;
+   
+}
+
+.sheet-resource-confidence label {
+    display: inline-block;
+    width: 50px;
+}
+
+.sheet-resource-confidence label span {
+    color: #FFFFFF;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+/********************************
+        ATTRIBUTES & APTITUDES
+********************************/
+
+.sheet-attributes {
+    margin-right: 40px;
+}
+
+.sheet-attribute {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em;
+    border: solid 1px var(--fgred);
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.sheet-attribute input[type="number"] {
+    font-size: 2em;
+    color: var(--fgred);
+}
+
+.sheet-aptitude {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin-bottom: 2px;
+}
+
+.sheet-aptitude input[type="number"] {
+    border: none;
+    color: var(--fgred);
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    text-align: right;
+}
+
+
+
+
+/**************************************
+    repeating-with-extension
+**************************************/
+
+.sheet-repeating-with-extension {
+    position: relative;
+}
+
+.sheet-repeating-with-extension:hover input[type="checkbox"].sheet-extended-content-switch + span {
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.sheet-repeating-with-extension input[type="checkbox"].sheet-extended-content-switch + span {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    white-space: nowrap;
+    width: 18px;
+    height: 18px;
+    font-family: 'Pictos';
+    font-size: 1.5em;
+    color: #A0A0A0;
+    cursor: pointer;
+    margin-top: 0px;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.sheet-repeating-with-extension input[type="checkbox"].sheet-extended-content-switch:checked + span {
+    color: #FF0000;
+}
+
+.sheet-repeating-with-extension .sheet-extended-content-switch {
+    opacity: 0;    
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width: 18px;
+    height: 18px;
+    z-index: 2;
+    transform: scale(1.5);
+    margin:0px;
+}
+
+.sheet-repeating-with-extension .sheet-extended-content {
+    display: none;
+}
+
+.sheet-repeating-with-extension input[type="checkbox"].sheet-extended-content-switch:checked ~ .sheet-extended-content {
+    display: block;
+}
+
+/**************************************
+    repcontrol overrides
+**************************************/
+.repcontrol_add {
+    visibility: hidden;
+}
+
+.repcontrol_add:before {
+    visibility: visible;
+    font-family: 'Pictos';
+    content: "+";
+    font-size: 1.5em;
+    color: var(--fgred);
+}
+
+.repcontrol_edit {
+    visibility: hidden;
+}
+
+.repcontrol_edit:after {
+    visibility: visible;
+    font-family: 'Pictos';
+    content: "(";
+    font-size: 1.5em;
+    color: var(--fgred);
+}
+
+.itemcontrol {
+    z-index: 10;
+}
+
+.repcontrol {
+    min-height: 32px;
+}
+
+/**************************************
+    checkbox => switch display
+**************************************/
+.sheet-switch {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 60px;
+	height: 20px;
+	padding: 3px;
+	margin: 0 10px 10px 0;
+	background: #000000;
+	border-radius: 15px;
+	box-shadow: inset 0 -1px black, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+	box-sizing:content-box;
+}
+.sheet-switch-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	box-sizing:content-box;
+}
+
+.sheet-switch-off, .sheet-switch-on {
+    font-size: 10px;
+	text-transform: uppercase;
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+	box-sizing:content-box;
+}
+
+.sheet-switch-off {
+	content: "off";
+	right: 11px;
+	color: #BBBBBB;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.sheet-switch-on {
+	content: "on";
+	left: 11px;
+	color: var(--fgred);
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+
+
+.sheet-switch-handle {
+	position: absolute;
+	top: 2px;
+	left: 4px;
+	background: #bbbbbb;
+	border-radius: 100%;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+
+.sheet-switch-handle:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: #000000;
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.sheet-switch-input:checked ~ .sheet-switch-off {
+	opacity: 0;
+}
+.sheet-switch-input:checked ~ .sheet-switch-on {
+	opacity: 1;
+}
+
+.sheet-switch-input:checked ~ .sheet-switch-handle {
+	left: 40px;
+	background: var(--fgred);
+	box-shadow: none;
+}
+
+
+
+
+.sheet-switch-on, .sheet-switch-off, .sheet-switch-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+
+
+/****************************
+       content tabs
+*****************************/
+
+div.sheet-tab-content {
+    display: none;
+    position: relative;
+    top: 0px;
+}
+
+input.sheet-tab-main:checked ~ div.sheet-tab-main,
+input.sheet-tab-inventory:checked ~ div.sheet-tab-inventory,
+input.sheet-tab-levels:checked ~ div.sheet-tab-levels,
+input.sheet-tab-info:checked ~ div.sheet-tab-info {
+    display: block;
+}
+
+div.sheet-content {
+    position: relative;
+    z-index: 0;
+    border-top: solid 2px var(--fgred);
+    padding-top: 5px;
+    min-height: 800px;
+}
+
+input.sheet-tab {
+    position: absolute;
+    top: -25px;
+    width: 75px;
+    margin: 0;
+    visibility: hidden;
+}
+
+input.sheet-tab-main {
+    right: 300px;
+    z-index: -4;
+}
+
+input.sheet-tab-inventory {
+    right: 220px;
+    z-index: -3;
+}
+
+input.sheet-tab-levels {
+    right: 140px;
+    z-index: -2;
+}
+
+input.sheet-tab-info {
+    right: 60px;
+    z-index: -1;
+}
+
+input.sheet-tab::before {
+    visibility: visible;
+    display: block;
+    width: 71px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left:2px;
+    text-align: center;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    border: solid 2px #333333;
+    border-bottom: none;
+    background-color: #333333;
+    height: 15px;
+    padding-top: 5px;
+}
+
+input.sheet-tab-main::before {
+    content: "main";
+}
+
+input.sheet-tab-inventory::before {
+    content: "inventory";
+}
+
+input.sheet-tab-levels::before {
+    content: "levels";
+}
+
+input.sheet-tab-info::before {
+    content: "info";
+}
+
+input.sheet-tab:checked::before {
+    z-index: 2;
+    border: solid 2px var(--fgred);
+    border-bottom: solid 3px var(--bgc);
+    background-color: var(--bgc);
+}
