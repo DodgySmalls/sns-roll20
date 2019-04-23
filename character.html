@@ -1,0 +1,406 @@
+<div class="sheet-wrapper">
+    <div class="sheet-header">
+        <table>
+            <tr class="sheet-header-fields">
+                <td rowspan="3" class="sheet-splash"></td>
+                <td>
+                    <input type="text" name="attr_character_name" />
+                </td>
+                <td>
+                    <input type="text" name="attr_character_title" />
+                </td>
+                <td>
+                    <input type="number" name="attr_character_level" />
+                </td>
+                <td>
+                    <input type="text" name="attr_character_class" />
+                </td>
+                <td>
+                    <input type="text" name="attr_character_species" />
+                </td>
+            </tr>
+            <tr class="sheet-row-under-field">
+                <td>
+                    Name
+                </td>
+                <td>
+                    Title / Honourific
+                </td>
+                <td>
+                    Level
+                </td>
+                <td>
+                    Class
+                </td>
+                <td>
+                    Species
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" style="vertical-align: center;">
+
+                    <label class="sheet-switch">
+                        <input class="sheet-switch-input" type="checkbox" name="attr_privaterolls" />
+                        <span class="sheet-switch-on">GM</span>
+                        <span class="sheet-switch-off">All</span>
+                        <span class="sheet-switch-handle"></span> 
+                    </label>
+                    
+                    <div class="sheet-resource-radial">
+                        <div class="sheet-resource-fate">
+                            <input type="radio" value="5" name="attr_fate" />
+                            <input type="radio" value="4" name="attr_fate" />
+                            <input type="radio" value="3" name="attr_fate" />
+                            <input type="radio" value="2" name="attr_fate" />
+                            <input type="radio" value="1" name="attr_fate" />
+                            <label>
+                                <span>FATE</span>
+                                <input type="radio" value="0" name="attr_fate" style="display:none;" checked="true">
+                            </label> 
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    
+    <div class="sheet-content">
+        <input type="radio" name="attr_tab" class="sheet-tab sheet-tab-main" value="1" checked="checked">
+        <span title="First Tab"></span>
+        <input type="radio" name="attr_tab" class="sheet-tab sheet-tab-inventory" value="2">
+        <span title="Second Tab"></span>
+        <input type="radio" name="attr_tab" class="sheet-tab sheet-tab-levels" value="3">
+        <span title="Third Tab"></span>
+        <input type="radio" name="attr_tab" class="sheet-tab sheet-tab-info" value="4">
+        <span title="Fourth Tab"></span>
+        
+        
+        <div class="sheet-tab-content sheet-tab-main">
+            <div class="sheet-row-flex">
+                <div class="sheet-column">
+                    
+                    <div class="sheet-resources">
+                        
+                        <h3>Resources</h3>
+                        
+                        <div>
+                            
+                            
+                            <div class="sheet-resource sheet-resource-hp">
+                                
+                                <div class="sheet-numerator sheet-value-with-temp">
+                                    <input type="number" name="attr_hp" class="sheet-centered-number" />
+                                    <input type="number" name="attr_hp_temp" class="sheet-centered-number"  />
+                                </div>    
+        
+                                <div class="sheet-denominator">
+                                    <input type="number" name="attr_hp_max" class="sheet-centered-number" />
+                                    <span>Hitpoints</span>
+                                </div>
+                            </div>
+                            
+                            <div class="sheet-resource sheet-resource-stamina">
+                                
+                                <div class="sheet-numerator sheet-value-with-temp">
+                                    <input type="number" name="attr_stamina" class="sheet-centered-number" />
+                                    <input type="number" name="attr_stamina_max" class="sheet-centered-number" />
+                                </div>
+                                
+                                <div class="sheet-denominator">
+                                    <input type="number" name="attr_stamina_temp" class="sheet-centered-number" />
+                                    <span>Stamina</span>
+                                </div>
+                            </div>
+                            
+                            <div class="sheet-resource">
+                                Tension
+                                <input type="number" name="attr_tension" class="sheet-centered-number" />
+                                Volatility
+                                <input type="number" name="attr_volatility" class="sheet-centered-number" />
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div class="sheet-resource">
+                            Death Threshold
+                            <input type="number" name="attr_death_threshold" class="sheet-centered-number" />
+                        </div>
+                        
+                        <div class="sheet-resource-radial sheet-resource-confidence">
+                            <label>
+                                <span>Confidence</span>
+                                <input type="radio" value="0" name="attr_confidence" style="display:none;" checked="true">
+                            </label> 
+                            <input type="radio" value="1" name="attr_confidence" />
+                            <input type="radio" value="2" name="attr_confidence" />
+                            <input type="radio" value="3" name="attr_confidence" />
+                        </div>
+                    </div>
+                    
+                    <div class="sheet-attributes-aptitudes">
+                        
+                        <div class="sheet-row-flex">
+                            
+                            <div class="sheet-attributes">
+                                <h3>Attributes</h3>
+                                <div class="sheet-attribute">
+                                    <input type="number" name="attr_str" class="sheet-centered-number" />
+                                    <div class="sheet-attribute-title">Strength</div>
+                                </div>
+                                <div class="sheet-attribute">
+                                    <input type="number" name="attr_dex" class="sheet-centered-number" />
+                                    <div class="sheet-attribute-title">Dexterity</div>
+                                </div>
+                                <div class="sheet-attribute">
+                                    <input type="number" name="attr_for" class="sheet-centered-number" />
+                                    <div class="sheet-attribute-title">Fortitude</div>
+                                </div>
+                                <div class="sheet-attribute">
+                                    <input type="number" name="attr_int" class="sheet-centered-number" />
+                                    <div class="sheet-attribute-title">Intellect</div>
+                                </div>
+                                <div class="sheet-attribute">
+                                    <input type="number" name="attr_cog" class="sheet-centered-number" />
+                                    <div class="sheet-attribute-title">Cognizance</div>
+                                </div>
+                                <div class="sheet-attribute">
+                                    <input type="number" name="attr_ard" class="sheet-centered-number" />
+                                    <div class="sheet-attribute-title">Ardor</div>
+                                </div>
+                                
+                            </div>
+                        
+                            <div class="sheet-column sheet-aptitudes">
+                                <h3>Aptitudes</h3>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_brawn" value="@{str}" disabled="true" />
+                                    Brawn
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_finesse" value="(@{dex})" disabled="true" />
+                                    Finesse
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_resilience" value="(@{for})" disabled="true" />
+                                    Resilience
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_athletics" value="(ceiling((@{str} + @{dex})/2))" disabled="true" />
+                                    Athletics
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_athletics" value="(ceiling((@{dex} + @{str})/2))" disabled="true" />
+                                    Agility
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_coordination" value="(ceiling((@{dex} + @{str})/2))" disabled="true" />
+                                    Coordination
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_coordination" value="(ceiling((@{for} + @{str})/2))" disabled="true" />
+                                    Endurance
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_focus" value="(ceiling((@{cog} + @{for})/2))" disabled="true" />
+                                    Focus
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_alertness" value="(ceiling((@{cog} + @{dex})/2))" disabled="true" />
+                                    Alertness
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_reflexes" value="(ceiling((@{dex} + @{int})/2))" disabled="true" />
+                                    Reflexes
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_willpower" value="(ceiling((@{ard} + @{str})/2))" disabled="true" />
+                                    Willpower
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_initiative" value="(ceiling((@{ard} + @{dex})/2))" disabled="true" />
+                                    Initiative
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_knowledge" value="(ceiling((@{int} + @{cog})/2))" disabled="true" />
+                                    Knowledge
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_charisma" value="(ceiling((@{ard} + @{int})/2))" disabled="true" />
+                                    Charisma
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_wisdom" value="(ceiling((@{cog} + @{int})/2))" disabled="true" />
+                                    Wisdom
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_scrutiny" value="(ceiling((@{cog} + @{int})/2))" disabled="true" />
+                                    Scrutiny
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_wit" value="(ceiling((@{int} + @{ard})/2))" disabled="true" />
+                                    Wit
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_logic" value="(@{int})" disabled="true" />
+                                    Logic
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_intuition" value="(@{cog})" disabled="true" />
+                                    Intuition
+                                </div>
+                                <div class="sheet-aptitude">
+                                    <input type="number" name="attr_conviction" value="(@{ard})" disabled="true" />
+                                    Conviction
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="sheet-skills">
+                        <h3>Skills</h3>
+                        <fieldset class="repeating_skill">
+                            <div class="sheet-skill-wrapper">
+                                <input type="text" name="attr_skill" placeholder="Skill"/>
+                                Expertise
+                                <input type="checkbox" name="attr_expert" />
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                </div>
+        
+                <div class="sheet-column">
+                    
+                    <div class="sheet-armour">
+                        <h3>Armour</h3>
+                        
+                        Global AC, Global Evasion
+                        
+                        Armour fields
+                        
+                        footspeed
+                    </div>
+                    
+                    <div class="sheet-weapons">
+                        <h3>Weapons</h3>
+                        <fieldset class="repeating_weapon">
+                            <div class="sheet-repeating-with-extension sheet-weapon-wrapper">
+                               
+                                <input class="sheet-extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                                <span>W</span>
+                                
+                                Weapon
+                                <input type="text" name="attr_weapon_name" />
+                                <input type="text" name="attr_weapon_dice" />
+                                
+                                <div class="sheet-extended-content">
+                                    Description
+                                    <input type="text" name="attr_weapon_description" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                    
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="sheet-tab-content sheet-tab-inventory">
+            <h3>Inventory</h3>
+            <fieldset class="repeating_item">
+                <div class="sheet-repeating-with-extension sheet-item-wrapper">
+                   
+                    <input class="sheet-extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                    <span>W</span>
+                    
+                    Item
+                    <input type="text" name="attr_weapon_name" />
+                    
+                    <div class="sheet-extended-content">
+                        Description
+                        <input type="text" name="attr_item_description" />
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        
+        <div class="sheet-tab-content sheet-tab-levels">
+            <h3>Levels</h3>
+            <fieldset class="repeating_item">
+                <div class="sheet-repeating-with-extension sheet-level-wrapper">
+                   
+                    <input class="sheet-extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                    <span>W</span>
+                    
+                    
+                    <input type="text" name="attr_aspect_name" placeholder="Aspect"/>
+                    
+                    hp
+                    <input type="number" name="attr_aspect_hp" default="5" class="sheet-centered-number" />
+                    
+                    <input type="text" name="attr_aspect_name" placeholder="Feature"/>
+                    
+                    <div class="sheet-extended-content">
+                        Note
+                        <input type="text" name="attr_item_description" />
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        
+        <div class="sheet-tab-content sheet-tab-info">
+            <h3>Info</h3>
+            
+            <div class="sheet-row-flex">
+                <div class="sheet-column">
+                    
+                    <div class="sheet-languages">
+                        <h3>Languages</h3>
+                        <fieldset class="repeating_language">
+                            <div class="sheet-repeating-with-extension sheet-language-wrapper">
+                                
+                                <input class="sheet-extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                                <span>W</span>
+                                
+                                <input type="text" name="attr_language" placeholder="language" style="width:80px;"/>
+                                Understand
+                                <input type="checkbox" name="attr_understand" />
+                                Speak
+                                <input type="checkbox" name="attr_speak" />
+                                Read/Write
+                                <input type="checkbox" name="attr_readwrite" />
+                                
+                                <div class="sheet-extended-content">
+                                    Language Note
+                                    <input type="text" name="attr_note" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="sheet-column">
+                    <div class="sheet-note">
+                        <fieldset class="repeating_note">
+                            <div class="sheet-repeating-with-extension sheet-note-wrapper">
+                                
+                                <input class="sheet-extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                                <span>W</span>
+                                
+                                <input type="text" name="attr_subject" placeholder="Subject"/>
+        
+                                <div class="sheet-extended-content">
+                                    <input type="text" name="attr_note" placeholder="Note ..." />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
