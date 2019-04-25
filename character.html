@@ -123,16 +123,20 @@
                                     <div class="resource">
                                         Tension
                                         <input type="number" name="attr_tension" class="centered-number" />
-                                        <input type="number" name="attr_tension_max" class="centered-number" value="30" disabled="true" style="display:none;" />
+                                        <input type="number" name="attr_tension_max" class="centered-number" value="30" disabled style="display:none;" />
                                     </div>
                                     <div class="resource">
                                         Volatility
                                         <input type="number" name="attr_volatility" class="centered-number" />
-                                        <input type="number" name="attr_volatility_max" class="centered-number" value="30" disabled="true" style="display:none;" />
+                                        <input type="number" name="attr_volatility_max" class="centered-number" value="30" disabled style="display:none;" />
                                     </div>
                                     <div class="resource>">
                                         Exhaustion
                                         <input type="number" name="attr_exhaustion" class="centered-number" />
+                                    </div>
+                                    <div class="resource">
+                                        Reaction
+                                        <input type="checkbox" name="attr_reaction" checked="checked" />
                                     </div>
                                 </td>
                             </tr>
@@ -140,7 +144,7 @@
                                 <td>
                                     <div class="resource resource-death-threshold">
                                         <div class="header-small-caps">Death Threshold</div>
-                                        <input type="number" name="attr_death_threshold" class="centered-number" />
+                                        <input type="number" name="attr_death_threshold" class="centered-number" value="30" />
                                     </div>
                                 </td>
                                 <td>
@@ -197,83 +201,83 @@
                             <div class="column aptitudes">
                                 <h3>Aptitudes</h3>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_brawn" value="(@{str})" disabled="true" />
+                                    <input type="number" name="attr_brawn" value="(@{str})" disabled />
                                     Brawn
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_finesse" value="(@{dex})" disabled="true" />
+                                    <input type="number" name="attr_finesse" value="(@{dex})" disabled />
                                     Finesse
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_resilience" value="(@{for})" disabled="true" />
+                                    <input type="number" name="attr_resilience" value="(@{for})" disabled />
                                     Resilience
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_athletics" value="(ceiling((@{str} + @{dex})/2))" disabled="true" />
+                                    <input type="number" name="attr_athletics" value="(ceiling((@{str} + @{dex})/2))" disabled />
                                     Athletics
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_athletics" value="(ceiling((@{dex} + @{str})/2))" disabled="true" />
+                                    <input type="number" name="attr_athletics" value="(ceiling((@{dex} + @{str})/2))" disabled />
                                     Agility
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_coordination" value="(ceiling((@{dex} + @{str})/2))" disabled="true" />
+                                    <input type="number" name="attr_coordination" value="(ceiling((@{dex} + @{str})/2))" disabled />
                                     Coordination
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_coordination" value="(ceiling((@{for} + @{str})/2))" disabled="true" />
+                                    <input type="number" name="attr_coordination" value="(ceiling((@{for} + @{str})/2))" disabled />
                                     Endurance
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_focus" value="(ceiling((@{cog} + @{for})/2))" disabled="true" />
+                                    <input type="number" name="attr_focus" value="(ceiling((@{cog} + @{for})/2))" disabled />
                                     Focus
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_alertness" value="(ceiling((@{cog} + @{dex})/2))" disabled="true" />
+                                    <input type="number" name="attr_alertness" value="(ceiling((@{cog} + @{dex})/2))" disabled />
                                     Alertness
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_reflexes" value="(ceiling((@{dex} + @{int})/2))" disabled="true" />
+                                    <input type="number" name="attr_reflexes" value="(ceiling((@{dex} + @{int})/2))" disabled />
                                     Reflexes
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_willpower" value="(ceiling((@{ard} + @{str})/2))" disabled="true" />
+                                    <input type="number" name="attr_willpower" value="(ceiling((@{ard} + @{str})/2))" disabled />
                                     Willpower
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_initiative" value="(ceiling((@{ard} + @{dex})/2))" disabled="true" />
+                                    <input type="number" name="attr_initiative" value="(ceiling((@{ard} + @{dex})/2))" disabled />
                                     Initiative
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_knowledge" value="(ceiling((@{int} + @{cog})/2))" disabled="true" />
+                                    <input type="number" name="attr_knowledge" value="(ceiling((@{int} + @{cog})/2))" disabled />
                                     Knowledge
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_charisma" value="(ceiling((@{ard} + @{int})/2))" disabled="true" />
+                                    <input type="number" name="attr_charisma" value="(ceiling((@{ard} + @{int})/2))" disabled />
                                     Charisma
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_wisdom" value="(ceiling((@{cog} + @{int})/2))" disabled="true" />
+                                    <input type="number" name="attr_wisdom" value="(ceiling((@{cog} + @{int})/2))" disabled />
                                     Wisdom
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_scrutiny" value="(ceiling((@{cog} + @{int})/2))" disabled="true" />
+                                    <input type="number" name="attr_scrutiny" value="(ceiling((@{cog} + @{int})/2))" disabled />
                                     Scrutiny
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_wit" value="(ceiling((@{int} + @{ard})/2))" disabled="true" />
+                                    <input type="number" name="attr_wit" value="(ceiling((@{int} + @{ard})/2))" disabled />
                                     Wit
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_logic" value="(@{int})" disabled="true" />
+                                    <input type="number" name="attr_logic" value="(@{int})" disabled />
                                     Logic
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_intuition" value="(@{cog})" disabled="true" />
+                                    <input type="number" name="attr_intuition" value="(@{cog})" disabled />
                                     Intuition
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_conviction" value="(@{ard})" disabled="true" />
+                                    <input type="number" name="attr_conviction" value="(@{ard})" disabled />
                                     Conviction
                                 </div>
                             </div>
@@ -297,43 +301,80 @@
                 <div class="column">
                     
                     <div class="armour">
+                        
                         <h3>Armour</h3>
                         
-                        <div class="row-flex">
-                            <div class="column">
-                                <div class="armour-slot armour-head">
-                                    <input type="number" name="attr_head_armor" value="4" disabled="true" />
-                                    <input type="number" name="attr_local_head_item_armour" />
-                                    <input type="number" name="attr_global_head_item_armour" />
-                                </div>
-                                
-                                <div class="armour-slot armour-body">
-                                    <input type="number" name="attr_body_armor" value="4" disabled="true" />
-                                    <input type="number" name="attr_local_body_item_armour" />
-                                    <input type="number" name="attr_global_body_item_armour" />
-                                </div>
-                                
-                                <div class="armour-slot armour-hand">
-                                    <input type="number" name="attr_hand_armor" value="4" disabled="true" />
-                                    <input type="number" name="attr_local_hand_item_armour" />
-                                    <input type="number" name="attr_global_hand_item_armour" />
-                                </div>
-                                
-                                <div class="armour-slot armour-foot">
-                                    <input type="number" name="attr_foot_armor" value="4" disabled="true" />
-                                    <input type="number" name="attr_local_foot_item_armour" />
-                                    <input type="number" name="attr_global_foot_item_armour" />
-                                </div>
-                            </div>
-                            
-                            <div class="column">
-                                <input type="number" name="attr_global_armour" value="4" disabled="true" />
-                                <input type="number" name="attr_global_evasion" value="5" disabled="true" />
-                                <input type="number" name="attr_global_evasion_max" value="9" disabled="true" />
-                            
-                                <input type="number" name="attr_footspeed" default="5"/>m
-                            </div>
+                        <input type="hidden" name="attr_toughness" value="5" disabled>
+
+                        <div class="armour-slot armour-head">
+                            <span class="header-small-caps">Head</span>
+                            <input type="number" name="attr_head_defense" value="(@{toughness} + @{head_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_head_armour" value="(@{local_head_item_armour} + @{local_head_armour_adjust})" disabled style="display:none;" />
+                            <input type="number" name="attr_local_head_item_armour" placeholder="L" class="armour-local" /><input type="number" name="attr_global_head_item_armour" placeholder="G" class="armour-global" />
+                            <input type="number" name="attr_local_head_armour_adjust" placeholder="tmp" class="val-adjust" />
+                            E:
+                            <input type="number" name="attr_head_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_head_item_name" placeholder="item..." />
                         </div>
+                        
+                        <div class="armour-slot armour-body">
+                            <span class="header-small-caps">Body</span>
+                            <input type="number" name="attr_body_defense" value="(@{toughness} + @{body_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_body_armour" value="(@{local_body_item_armour} + @{local_body_armour_adjust})" disabled style="display:none;" />
+                            <input type="number" name="attr_local_body_item_armour" placeholder="L" class="armour-local" /><input type="number" name="attr_global_body_item_armour" placeholder="G" class="armour-global" />
+                            <input type="number" name="attr_local_body_armour_adjust" placeholder="tmp" class="val-adjust" />
+                            E:
+                            <input type="number" name="attr_body_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_body_item_name" placeholder="item..." />
+                        </div>
+                        
+                        <div class="armour-slot armour-hand">
+                            <span class="header-small-caps">Hand</span>
+                            <input type="number" name="attr_hand_defense" value="(@{toughness} + @{hand_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_hand_armour" value="(@{local_hand_item_armour} + @{local_hand_armour_adjust})" disabled style="display:none;" />
+                            <input type="number" name="attr_local_hand_item_armour" placeholder="L" class="armour-local"/><input type="number" name="attr_global_hand_item_armour" placeholder="G" class="armour-global"/>
+                            <input type="number" name="attr_local_hand_armour_adjust" placeholder="tmp" class="val-adjust" />
+                            E:
+                            <input type="number" name="attr_hand_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_hand_item_name" placeholder="item..." />
+                        </div>
+                        
+                        <div class="armour-slot armour-foot">
+                            <span class="header-small-caps">Foot</span>
+                            <input type="number" name="attr_hand_defense" value="(@{toughness} + @{hand_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_foot_armour" value="(@{local_foot_item_armour} + @{local_foot_armour_adjust})" disabled style="display:none;" />
+                            <input type="number" name="attr_local_foot_item_armour" placeholder="L" class="armour-local" /><input type="number" name="attr_global_foot_item_armour" placeholder="G" class="armour-global" />
+                            <input type="number" name="attr_local_foot_armour_adjust" placeholder="tmp" class="val-adjust"/>
+                            E:
+                            <input type="number" name="attr_foot_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_foot_item_name" placeholder="item..." />
+                        </div>
+                    
+                        
+                        Global Armour
+                        <input type="number" name="attr_global_armour" 
+                            value="(@{global_head_item_armour} + @{global_body_item_armour} + @{global_hand_item_armour} + @{global_foot_item_armour} + @{global_armour_adjust})" 
+                            disabled />
+                        <input type="number" name="attr_global_armour_adjust" placeholder="tmp" class="val-adjust"/>
+                        
+                    
+                        Global Evasion <input type="number" name="attr_global_evasion" value="(@{dex})" disabled />
+                        <input type="number" name="attr_global_evasion_max" value="9" disabled style="display:none;"/>
+                        <input type="number" name="attr_evasion_adjust" placeholder="tmp" class="val-adjust" />
+                            
+                        <br/>        
+                        
+                        Global Defense
+                        <input type="number" name="attr_global_defense"
+                            value="(@{toughness} + @{global_armour} + @{global_evasion})" disabled class="def global-def centered-number"/>
+                        
+                        <br/>
+                        Footspeed: <input type="number" name="attr_footspeed" value="5"/>m
+                        <br/>
+                        Encumbrance:
+                        <input type="number" name="attr_encumbrance" disabled 
+                            value="(@{head_item_encumbrance} + @{body_item_encumbrance} + @{hand_item_encumbrance} + @{foot_item_encumbrance})"/>
+                        | <input type="number" name="attr_encumbrance_max" value="10"/> 
                     </div>
                     
                     <div class="weapons">
@@ -488,7 +529,7 @@
                     <input type="text" name="attr_aspect_name" placeholder="Aspect"/>
                     
                     hp
-                    <input type="number" name="attr_aspect_hp" default="5" class="centered-number" />
+                    <input type="number" name="attr_aspect_hp" value="5" class="centered-number" />
                     
                     <input type="text" name="attr_aspect_name" placeholder="Feature"/>
                     

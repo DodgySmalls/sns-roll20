@@ -393,6 +393,73 @@ h1, h2, h3, h4, h5, h6 {
     content: "R";
 }
 
+
+/**************************************
+    Armour
+**************************************/
+.sheet-val-adjust {
+    font-size: 0.7em;
+    text-align:center;
+    font-style:italic;
+    color: #CCCCCC;
+}
+
+.sheet-global-def {
+    margin-top: 6px;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.sheet-def {
+    border-radius: 11px;
+    color: var(--fgaccent);
+    background-color: #000000;
+    border: none;
+    outline: none;
+}
+
+.sheet-wrapper input[type="number"].sheet-armour-local, .sheet-wrapper input[type="number"].sheet-armour-global {
+    width: 2em;
+}
+
+.sheet-armour-local::placeholder, .sheet-armour-global::placeholder {
+    color: #000000;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+.sheet-armour-local {
+    border-radius: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border: solid 1px #FFFFFF;
+    border-right: none;
+    outline: none !important;
+    background-color: #666666;
+    text-align: center;
+}
+
+.sheet-armour-global {
+    border-radius: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: solid 1px #FFFFFF;
+    border-left: none;
+    outline: none !important;
+    background-color: #888888;
+    text-align: center;
+}
+
+.sheet-armour-slot {
+    margin-bottom: 5px;
+}
+
+.sheet-armour-slot span.sheet-header-small-caps {
+    text-align: right;
+    padding-right: 8px;
+    display: inline-block;
+    width: 40px;
+}
 /**************************************
     repeating-with-extension
 **************************************/
