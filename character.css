@@ -79,6 +79,11 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1em;
 }
 
+hr {
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 /********************************
         HEADER
 ********************************/
@@ -121,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 4px;
 }
 
-.sheet-resources, .sheet-attributes-aptitudes, .sheet-skills, .sheet-languages, .sheet-weapons, .sheet-armour {
+.sheet-resources, .sheet-attributes-aptitudes, .sheet-skills, .sheet-languages, .sheet-weapons, .sheet-armour, .sheet-features, .sheet-abilities {
     margin-bottom: 15px;
     padding: 10px;
     border: solid 1px #FFFFFF;
@@ -513,6 +518,9 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
+.sheet-extended-content > hr {
+    width: 80%;
+}
 /**************************************
     repcontrol overrides
 **************************************/
@@ -552,104 +560,104 @@ h1, h2, h3, h4, h5, h6 {
     checkbox => switch display
 **************************************/
 .sheet-wrapper label.sheet-switch {
-	position: relative;
-	display: inline-block;
-	vertical-align: top;
-	width: 60px;
-	height: 20px;
-	padding: 3px;
-	margin: 0 10px 10px 0;
-	background: #000000;
-	border-radius: 15px;
-	box-shadow: inset 0 -1px black, inset 0 1px 1px rgba(0, 0, 0, 0.05);
-	cursor: pointer;
-	box-sizing:content-box;
-	font-size: 1.2em;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    height: 20px;
+    padding: 3px;
+    margin: 0 10px 10px 0;
+    background: #000000;
+    border-radius: 15px;
+    box-shadow: inset 0 -1px black, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    box-sizing:content-box;
+    font-size: 1.2em;
 
 }
 .sheet-switch-input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	box-sizing:content-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    box-sizing:content-box;
 }
 
 .sheet-switch-off, .sheet-switch-on {
     font-size: 10px;
-	text-transform: uppercase;
-	position: absolute;
-	top: 50%;
-	margin-top: -.5em;
-	line-height: 1;
-	-webkit-transition: inherit;
-	-moz-transition: inherit;
-	-o-transition: inherit;
-	transition: inherit;
-	box-sizing:content-box;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    box-sizing:content-box;
 }
 
 .sheet-switch-off {
-	content: "off";
-	right: 11px;
-	color: #BBBBBB;
-	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+    content: "off";
+    right: 11px;
+    color: #BBBBBB;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .sheet-switch-on {
-	content: "on";
-	left: 11px;
-	color: var(--fgaccent);
-	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-	opacity: 0;
+    content: "on";
+    left: 11px;
+    color: var(--fgaccent);
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
 }
 
 
 .sheet-switch-handle {
-	position: absolute;
-	top: 2px;
-	left: 4px;
-	background: #bbbbbb;
-	border-radius: 100%;
-	width: 22px;
-	height: 22px;
-	box-shadow: none;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    background: #bbbbbb;
+    border-radius: 100%;
+    width: 22px;
+    height: 22px;
+    box-shadow: none;
 }
 
 .sheet-switch-handle:before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -6px 0 0 -6px;
-	width: 12px;
-	height: 12px;
-	background: #000000;
-	border-radius: 6px;
-	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: #000000;
+    border-radius: 6px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
 }
 
 .sheet-switch-input:checked ~ .sheet-switch-off {
-	opacity: 0;
+    opacity: 0;
 }
 .sheet-switch-input:checked ~ .sheet-switch-on {
-	opacity: 1;
+    opacity: 1;
 }
 
 .sheet-switch-input:checked ~ .sheet-switch-handle {
-	left: 40px;
-	background: var(--fgaccent);
-	box-shadow: none;
+    left: 40px;
+    background: var(--fgaccent);
+    box-shadow: none;
 }
 
 
 
 
 .sheet-switch-on, .sheet-switch-off, .sheet-switch-handle {
-	transition: All 0.3s ease;
-	-webkit-transition: All 0.3s ease;
-	-moz-transition: All 0.3s ease;
-	-o-transition: All 0.3s ease;
+    transition: All 0.3s ease;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
 }
 
 

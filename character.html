@@ -69,7 +69,7 @@
             </tr>
         </table>
         
-    </div>
+    </div><!-- end header -->
     
     <div class="content">
         <input type="radio" name="attr_tab" class="tab tab-main" value="1" checked="checked">
@@ -296,7 +296,28 @@
                         </fieldset>
                     </div>
                     
-                </div>
+                    
+                    <div class="abilities">
+                        <h3>Abilities</h3>
+                    
+                        <fieldset class="repeating_ability">
+                            <div class="repeating-with-extension ability-wrapper">
+                               
+                                <input class="extended-content-switch" type="checkbox" name="attr_extended" />
+                                <span>W</span>
+                                
+                                <input type="text" name="attr_ability_name" placeholder="name" />
+                                <div class="extended-content">
+                                    <div>Description</div>
+                                    <div>
+                                        <textarea name="attr_ability_description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                </div><!-- end column -->
         
                 <div class="column">
                     
@@ -481,21 +502,64 @@
                                 </div>
                                 
                                 <div class="extended-content">
+                                    <hr/>
                                     <div>Description</div>
                                     <div>
-                                        <textarea name="attr_weapon_description">
-                                        </textarea>
+                                        <textarea name="attr_weapon_description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="munitions">
+                            <h4>Munitions</h4>
+                        
+                            <fieldset class="repeating_munition">
+                                    <div class="repeating-with-extension munition-wrapper">
+                                       
+                                        <input class="extended-content-switch" type="checkbox" name="attr_extended" />
+                                        <span>W</span>
+                                        
+                                        <input type="text" name="attr_munition_name" placeholder="name" />
+                                        <input type="text" name="attr_munition_damage" placeholder="damage..." />
+                                        <div class="extended-content">
+                                            <div>Description</div>
+                                            <div>
+                                                <textarea name="attr_munition_description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </fieldset>
+                        </div>
+                    
+                    </div><!-- end weapons -->
+                    
+                    
+                    <div class="features">
+                        <h3>Features</h3>
+                    
+                        <fieldset class="repeating_feature">
+                            <div class="repeating-with-extension feature-wrapper">
+                               
+                                <input class="extended-content-switch" type="checkbox" name="attr_extended" />
+                                <span>W</span>
+                                
+                                <input type="text" name="attr_feature_name" placeholder="name" />
+                                <div class="extended-content">
+                                    <div>Description</div>
+                                    <div>
+                                        <textarea name="attr_feature_description"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
                     </div>
-                    
-                    
-                </div>
+                        
+                        
+                </div><!-- end column -->
             
-            </div>
-        </div>
+            </div><!-- end row layout -->
+        </div><!-- end main tab -->
         
         <div class="tab-content tab-inventory">
             <h3>Inventory</h3>
@@ -506,20 +570,21 @@
                     <span>W</span>
                     
                     Item
-                    <input type="text" name="attr_weapon_name" />
+                    <input type="text" name="attr_item_name" />
+                    <input type="number" name="attr_item_quantity" placeholder="qty" />
                     
                     <div class="extended-content">
-                        Description
-                        <textarea name="attr_item_description">
-                        </textarea>
+                        <div>Description</div>
+                        <div><textarea name="attr_item_description"></textarea></div>
                     </div>
                 </div>
+                
             </fieldset>
         </div>
         
         <div class="tab-content tab-levels">
             <h3>Levels</h3>
-            <fieldset class="repeating_item">
+            <fieldset class="repeating_level">
                 <div class="repeating-with-extension level-wrapper">
                    
                     <input class="extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
@@ -534,9 +599,8 @@
                     <input type="text" name="attr_aspect_name" placeholder="Feature"/>
                     
                     <div class="extended-content">
-                        Note
-                        <textarea name="attr_note">
-                        </textarea>
+                        <div>Note</div>
+                        <div><textarea name="attr_note"></textarea></div>
                     </div>
                 </div>
             </fieldset>
@@ -565,9 +629,8 @@
                                 <input type="checkbox" name="attr_readwrite" />
                                 
                                 <div class="extended-content">
-                                    Language Note
-                                    <textarea name="attr_note">
-                                    </textarea>
+                                    <div>Language Note</div>
+                                    <div><textarea name="attr_note"></textarea></div>
                                 </div>
                             </div>
                         </fieldset>
@@ -584,8 +647,7 @@
                                 <input type="text" name="attr_subject" placeholder="Subject"/>
         
                                 <div class="extended-content">
-                                    <textarea name="attr_note" placeholder="Note ..." />
-                                    </textarea>
+                                    <div><textarea name="attr_note" placeholder="Note ..." /></textarea></div>
                                 </div>
                             </div>
                         </fieldset>
