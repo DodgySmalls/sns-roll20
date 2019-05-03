@@ -770,6 +770,30 @@
         </div><!-- end info tab-->
         
         <div class="tab-content tab-spells">
+            <fieldset class="repeating_spell">
+                <div class="repeating-with-extension note-wrapper">
+                    <input class="extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                    <span>W</span>
+                    
+                    <input type="text" name="attr_spell_name" placeholder="Spell Name"/>
+                    <input type="text" name="attr_spell_resource" placeholder="Resource"/>
+                    <select>
+                        <option value="none">None</option>
+                        <option value="stamina">Stamina</option>
+                        <option value="tension">Tension</option>
+                    </select>
+                    
+                    <input type="text" name="attr_spell_range" placeholder="Range"/>
+                    
+                    Targets
+                    <input type="text" name="attr_spell_target" placeholder="Targets"/>
+
+                    
+                    <div class="extended-content">
+                        <div><textarea name="attr_spell_effect" placeholder="Note ..." /></textarea></div>
+                    </div>
+                </div>
+            </fieldset>
         </div><!--end spells tab -->
     </div><!-- end content -->
 </div><!-- end wrapper -->

@@ -774,7 +774,8 @@ div.sheet-tab-content {
 input.sheet-tab-main:checked ~ div.sheet-tab-main,
 input.sheet-tab-inventory:checked ~ div.sheet-tab-inventory,
 input.sheet-tab-levels:checked ~ div.sheet-tab-levels,
-input.sheet-tab-info:checked ~ div.sheet-tab-info {
+input.sheet-tab-info:checked ~ div.sheet-tab-info,
+input.sheet-tab-spells:checked ~div.sheet-tab-spells {
     display: block;
 }
 
