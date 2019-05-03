@@ -36,6 +36,10 @@ input:focus {
     text-align: center;
 }
 
+.sheet-wrapper .sheet-text-number {
+    width: 3em;
+}
+
 .sheet-wrapper input[type="number"] {
     width: 3em;
 }
@@ -115,18 +119,22 @@ hr {
         CONTAINERS
 ********************************/
 
-.sheet-row-flex {
+.sheet-row-layout {
     display: flex;
-    flex-direction: row;
 }
 
 .sheet-column {
     display: block;
-    flex-grow: 1;
+    flex-grow: 0;
     margin-right: 4px;
 }
 
-.sheet-resources, .sheet-attributes-aptitudes, .sheet-skills, .sheet-languages, .sheet-weapons, .sheet-armour, .sheet-features, .sheet-abilities {
+
+.sheet-resources, .sheet-attributes-aptitudes, 
+.sheet-skills, .sheet-languages, 
+.sheet-weapons, .sheet-armour, 
+.sheet-features, .sheet-abilities,
+.sheet-readied-equipment {
     margin-bottom: 15px;
     padding: 10px;
     border: solid 1px #FFFFFF;
@@ -423,7 +431,7 @@ hr {
     outline: none;
 }
 
-.sheet-wrapper input[type="number"].sheet-armour-local, .sheet-wrapper input[type="number"].sheet-armour-global {
+.sheet-wrapper input.sheet-armour-local, .sheet-wrapper input.sheet-armour-global {
     width: 2em;
 }
 
@@ -465,6 +473,43 @@ hr {
     display: inline-block;
     width: 40px;
 }
+
+
+/**************************************
+    Items
+**************************************/
+.sheet-container-bottom {
+    margin-bottom: 15px;
+
+    border-radius: 0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: solid 1px #FFFFFF;
+    border-top: none;
+}
+
+.sheet-item-entry {
+    border: solid 1px #FFFFFF;
+    border-top: none;
+    border-bottom: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sheet-auto-center-block {
+    display: block;
+    margin: 0 auto;
+}
+
+.sheet-container-bottom .sheet-auto-center-block {
+    width: 200px;
+}
+
+.sheet-item-wrapper .sheet-binary-content-a, .sheet-item-wrapper .sheet-binary-content-b {
+    width: 100%;
+    margin-right: 50px;
+}
+
 /**************************************
     repeating-with-extension
 **************************************/
@@ -480,8 +525,8 @@ hr {
 
 .sheet-repeating-with-extension input[type="checkbox"].sheet-extended-content-switch + span {
     position: absolute;
-    top: 0px;
-    right: 30px;
+    top: 0;
+    right: 0;
     white-space: nowrap;
     width: 18px;
     height: 18px;
@@ -501,8 +546,8 @@ hr {
 .sheet-repeating-with-extension .sheet-extended-content-switch {
     opacity: 0;    
     position: absolute;
-    top: 0px;
-    right: 30px;
+    top: 0;
+    right: 0;
     width: 18px;
     height: 18px;
     z-index: 2;
@@ -521,6 +566,61 @@ hr {
 .sheet-extended-content > hr {
     width: 80%;
 }
+
+
+/**************************************
+    repeating-binary-content
+**************************************/
+
+.sheet-binary-content-a, .sheet-binary-content-b {
+    display: none;    
+}
+
+.sheet-binary-content-switch:checked ~ .sheet-binary-content-a {
+    display: block;
+}
+
+.sheet-binary-content-switch:not(:checked) ~ .sheet-binary-content-b {
+    display: block;
+}
+
+.sheet-repeating-binary-content:hover input[type="checkbox"].sheet-binary-content-switch + span {
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.sheet-repeating-binary-content input[type="checkbox"].sheet-binary-content-switch + span {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    white-space: nowrap;
+    width: 18px;
+    height: 18px;
+    font-family: 'Pictos';
+    font-size: 1.5em;
+    color: #A0A0A0;
+    cursor: pointer;
+    margin-top: 0px;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.sheet-repeating-binary-content input[type="checkbox"].sheet-binary-content-switch:checked + span {
+    color: #FF0000;
+}
+
+.sheet-repeating-binary-content .sheet-binary-content-switch {
+    opacity: 0;    
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 18px;
+    height: 18px;
+    z-index: 2;
+    transform: scale(1.5);
+    margin:0px;
+}
+
 /**************************************
     repcontrol overrides
 **************************************/
@@ -696,22 +796,22 @@ input.sheet-tab {
 }
 
 input.sheet-tab-main {
-    right: 300px;
+    right: 280px;
     z-index: -4;
 }
 
 input.sheet-tab-inventory {
-    right: 220px;
+    right: 200px;
     z-index: -3;
 }
 
 input.sheet-tab-levels {
-    right: 140px;
+    right: 120px;
     z-index: -2;
 }
 
 input.sheet-tab-info {
-    right: 60px;
+    right: 40px;
     z-index: -1;
 }
 

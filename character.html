@@ -83,8 +83,8 @@
         
         
         <div class="tab-content tab-main">
-            <div class="row-flex">
-                <div class="column" style="flex-grow: 0; width: 300px;">
+            <div class="row-layout">
+                <div class="column" style="width: 400px;">
                     
                     <div class="resources">
                         
@@ -167,7 +167,7 @@
                     
                     <div class="attributes-aptitudes">
                         
-                        <div class="row-flex">
+                        <div class="row-layout">
                             
                             <div class="attributes">
                                 <h3>Attributes</h3>
@@ -331,10 +331,10 @@
                             <span class="header-small-caps">Head</span>
                             <input type="number" name="attr_head_defense" value="(@{toughness} + @{head_armour} + @{global_evasion})" disabled class="def centered-number"/>
                             <input type="number" name="attr_head_armour" value="(@{local_head_item_armour} + @{local_head_armour_adjust})" disabled style="display:none;" />
-                            <input type="number" name="attr_local_head_item_armour" placeholder="L" class="armour-local" /><input type="number" name="attr_global_head_item_armour" placeholder="G" class="armour-global" />
-                            <input type="number" name="attr_local_head_armour_adjust" placeholder="tmp" class="val-adjust" />
+                            <input type="text" name="attr_local_head_item_armour" placeholder="L" class="text-number armour-local" /><input type="text" name="attr_global_head_item_armour" placeholder="G" class="text-number armour-global" />
+                            <input type="text" name="attr_local_head_armour_adjust" placeholder="tmp" class="text-number val-adjust" />
                             E:
-                            <input type="number" name="attr_head_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_head_item_encumbrance" placeholder="enc" class="text-number" />
                             <input type="text" name="attr_head_item_name" placeholder="item..." />
                         </div>
                         
@@ -342,10 +342,10 @@
                             <span class="header-small-caps">Body</span>
                             <input type="number" name="attr_body_defense" value="(@{toughness} + @{body_armour} + @{global_evasion})" disabled class="def centered-number"/>
                             <input type="number" name="attr_body_armour" value="(@{local_body_item_armour} + @{local_body_armour_adjust})" disabled style="display:none;" />
-                            <input type="number" name="attr_local_body_item_armour" placeholder="L" class="armour-local" /><input type="number" name="attr_global_body_item_armour" placeholder="G" class="armour-global" />
-                            <input type="number" name="attr_local_body_armour_adjust" placeholder="tmp" class="val-adjust" />
+                            <input type="text" name="attr_local_body_item_armour" placeholder="L" class="text-number armour-local" /><input type="text" name="attr_global_body_item_armour" placeholder="G" class="text-number armour-global" />
+                            <input type="text" name="attr_local_body_armour_adjust" placeholder="tmp" class="text-number val-adjust" />
                             E:
-                            <input type="number" name="attr_body_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_body_item_encumbrance" placeholder="enc" class="text-number" />
                             <input type="text" name="attr_body_item_name" placeholder="item..." />
                         </div>
                         
@@ -353,10 +353,10 @@
                             <span class="header-small-caps">Hand</span>
                             <input type="number" name="attr_hand_defense" value="(@{toughness} + @{hand_armour} + @{global_evasion})" disabled class="def centered-number"/>
                             <input type="number" name="attr_hand_armour" value="(@{local_hand_item_armour} + @{local_hand_armour_adjust})" disabled style="display:none;" />
-                            <input type="number" name="attr_local_hand_item_armour" placeholder="L" class="armour-local"/><input type="number" name="attr_global_hand_item_armour" placeholder="G" class="armour-global"/>
-                            <input type="number" name="attr_local_hand_armour_adjust" placeholder="tmp" class="val-adjust" />
+                            <input type="text" name="attr_local_hand_item_armour" placeholder="L" class="text-number armour-local"/><input type="text" name="attr_global_hand_item_armour" placeholder="G" class="text-number armour-global"/>
+                            <input type="text" name="attr_local_hand_armour_adjust" placeholder="tmp" class="text-number val-adjust" />
                             E:
-                            <input type="number" name="attr_hand_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_hand_item_encumbrance" placeholder="enc" class="text-number" />
                             <input type="text" name="attr_hand_item_name" placeholder="item..." />
                         </div>
                         
@@ -364,10 +364,10 @@
                             <span class="header-small-caps">Foot</span>
                             <input type="number" name="attr_hand_defense" value="(@{toughness} + @{hand_armour} + @{global_evasion})" disabled class="def centered-number"/>
                             <input type="number" name="attr_foot_armour" value="(@{local_foot_item_armour} + @{local_foot_armour_adjust})" disabled style="display:none;" />
-                            <input type="number" name="attr_local_foot_item_armour" placeholder="L" class="armour-local" /><input type="number" name="attr_global_foot_item_armour" placeholder="G" class="armour-global" />
-                            <input type="number" name="attr_local_foot_armour_adjust" placeholder="tmp" class="val-adjust"/>
+                            <input type="text" name="attr_local_foot_item_armour" placeholder="L" class="text-number armour-local" /><input type="text" name="attr_global_foot_item_armour" placeholder="G" class="text-number armour-global" />
+                            <input type="text" name="attr_local_foot_armour_adjust" placeholder="tmp" class="text-number val-adjust"/>
                             E:
-                            <input type="number" name="attr_foot_item_encumbrance" placeholder="enc" />
+                            <input type="text" name="attr_foot_item_encumbrance" placeholder="enc" class="text-number" />
                             <input type="text" name="attr_foot_item_name" placeholder="item..." />
                         </div>
                     
@@ -376,12 +376,12 @@
                         <input type="number" name="attr_global_armour" 
                             value="(@{global_head_item_armour} + @{global_body_item_armour} + @{global_hand_item_armour} + @{global_foot_item_armour} + @{global_armour_adjust})" 
                             disabled />
-                        <input type="number" name="attr_global_armour_adjust" placeholder="tmp" class="val-adjust"/>
+                        <input type="text" name="attr_global_armour_adjust" placeholder="tmp" class="text-number val-adjust"/>
                         
                     
                         Global Evasion <input type="number" name="attr_global_evasion" value="(@{dex})" disabled />
                         <input type="number" name="attr_global_evasion_max" value="9" disabled style="display:none;"/>
-                        <input type="number" name="attr_evasion_adjust" placeholder="tmp" class="val-adjust" />
+                        <input type="text" name="attr_evasion_adjust" placeholder="tmp" class="text-number val-adjust" />
                             
                         <br/>        
                         
@@ -555,7 +555,13 @@
                         </fieldset>
                     </div>
                         
+                    <div class="readied-equipment">
+                        <h3>Readied Equipment</h3>
                         
+                        <div style="width:250px;">
+                            <i style="color:#CCCCCC;">This section will contain automatically generated fields to remind you of equipment you currently have readied</i>
+                        </div>
+                    </div>
                 </div><!-- end column -->
             
             </div><!-- end row layout -->
@@ -563,23 +569,80 @@
         
         <div class="tab-content tab-inventory">
             <h3>Inventory</h3>
-            <fieldset class="repeating_item">
-                <div class="repeating-with-extension item-wrapper">
-                   
-                    <input class="extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
-                    <span>W</span>
+            <div class="row-layout">
+                <div class="column" style="width:380px; margin-right:20px;">
                     
-                    Item
-                    <input type="text" name="attr_item_name" />
-                    <input type="number" name="attr_item_quantity" placeholder="qty" />
+                    <fieldset class="repeating_item">
+                        <div class="repeating-with-extension repeating-binary-content item-wrapper">
+                           
+                            <input class="binary-content-switch" type="checkbox" name="attr_alternate"/>
+                            <span>O</span>
+                            
+                            <div class="binary-content-a">
+                                <div class="container-bottom">
+                                    <div class="auto-center-block">
+                                        <input type="text" name="attr_container_name" placeholder="Container Name" />
+                                        <input type="number" name="attr_container_capacity" placeholder="capacity" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="binary-content-b">
+                                <div class="item-entry">
+                                    <input class="extended-content-switch" type="checkbox" name="attr_extended" />
+                                    <span>W</span>
+                                    <input type="text" name="attr_item_name" placeholder="Item" />
+                                    <input type="number" name="attr_item_quantity" placeholder="qty" />
+                                    
+                                    <div class="extended-content">
+                                        <div>Description</div>
+                                        <div><textarea name="attr_item_description"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </fieldset>
                     
-                    <div class="extended-content">
-                        <div>Description</div>
-                        <div><textarea name="attr_item_description"></textarea></div>
-                    </div>
                 </div>
                 
-            </fieldset>
+                <div class="column" style="width:380px; margin-right:20px;">
+                        
+                        <fieldset class="repeating_item_two">
+                        <div class="repeating-with-extension repeating-binary-content item-wrapper">
+                           
+        
+                            <input class="binary-content-switch" type="checkbox" name="attr_alternate"/>
+                            <span>O</span>
+                            
+                            <div class="binary-content-a">
+                                <div class="container-bottom">
+                                    <div class="auto-center-block">
+                                        <input type="text" name="attr_container_name" placeholder="Container Name" />
+                                        <input type="number" name="attr_container_capacity" placeholder="capacity" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="binary-content-b">
+                                <div class="item-entry">
+                                    <input class="extended-content-switch" type="checkbox" name="attr_extended" />
+                                    <span>W</span>
+                                    <input type="text" name="attr_item_name" placeholder="Item" />
+                                    <input type="number" name="attr_item_quantity" placeholder="qty" />
+                                    
+                                    <div class="extended-content">
+                                        <div>Description</div>
+                                        <div><textarea name="attr_item_description"></textarea></div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </fieldset>
+                    
+                </div>
+            </div>
         </div>
         
         <div class="tab-content tab-levels">
@@ -596,7 +659,7 @@
                     hp
                     <input type="number" name="attr_aspect_hp" value="5" class="centered-number" />
                     
-                    <input type="text" name="attr_aspect_name" placeholder="Feature"/>
+                    <input type="text" name="attr_aspect_feature_name" placeholder="Feature"/>
                     
                     <div class="extended-content">
                         <div>Note</div>
@@ -609,7 +672,7 @@
         <div class="tab-content tab-info">
             <h3>Info</h3>
             
-            <div class="row-flex">
+            <div class="row-layout">
                 <div class="column">
                     
                     <div class="languages">
