@@ -73,14 +73,10 @@
     
     <div class="content">
         <input type="radio" name="attr_tab" class="tab tab-main" value="1" checked="checked">
-        <span title="First Tab"></span>
         <input type="radio" name="attr_tab" class="tab tab-inventory" value="2">
-        <span title="Second Tab"></span>
         <input type="radio" name="attr_tab" class="tab tab-levels" value="3">
-        <span title="Third Tab"></span>
         <input type="radio" name="attr_tab" class="tab tab-info" value="4">
-        <span title="Fourth Tab"></span>
-        
+        <input type="radio" name="attr_tab" class="tab tab-spells" value="5">
         
         <div class="tab-content tab-main">
             <div class="row-layout">
@@ -643,7 +639,7 @@
                     
                 </div>
             </div>
-        </div>
+        </div><!-- end inventory tab --> 
         
         <div class="tab-content tab-levels">
             <h3>Levels</h3>
@@ -667,13 +663,13 @@
                     </div>
                 </div>
             </fieldset>
-        </div>
+        </div><!-- end levels tab -->
         
         <div class="tab-content tab-info">
             <h3>Info</h3>
             
             <div class="row-layout">
-                <div class="column">
+                <div class="column" style="width:380px; margin-right: 20px;">
                     
                     <div class="languages">
                         <h3>Languages</h3>
@@ -698,10 +694,10 @@
                             </div>
                         </fieldset>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="note">
-                        <fieldset class="repeating_note">
+                    
+                    <div class="note-group">
+                        <h3>Current Notes</h3>
+                        <fieldset class="repeating_current_note">
                             <div class="repeating-with-extension note-wrapper">
                                 
                                 <input class="extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
@@ -715,8 +711,65 @@
                             </div>
                         </fieldset>
                     </div>
-                </div>
+                    
+                    <div class="note-group">
+                        <h3>Self</h3>
+                        <fieldset class="repeating_self_note">
+                            <div class="repeating-with-extension note-wrapper">
+                                
+                                <input class="extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                                <span>W</span>
+                                
+                                <input type="text" name="attr_subject" placeholder="Subject"/>
+        
+                                <div class="extended-content">
+                                    <div><textarea name="attr_note" placeholder="Note ..." /></textarea></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                </div><!-- end column -->
+                <div class="column" style="width:380px; margin-right: 20px;">
+                    <div class="note-group">
+                        <h3>Character Notes</h3>
+                        <fieldset class="repeating_character_note">
+                            <div class="repeating-with-extension note-wrapper">
+                                
+                                <input class="extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                                <span>W</span>
+                                
+                                <input type="text" name="attr_subject" placeholder="Subject"/>
+        
+                                <div class="extended-content">
+                                    <div><textarea name="attr_note" placeholder="Note ..." /></textarea></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                
+                    <div class="note-group">
+                        <h3>Misc</h3>
+                        <fieldset class="repeating_misc_note">
+                            <div class="repeating-with-extension note-wrapper">
+                                
+                                <input class="extended-content-switch" type="checkbox" name="attr_extended" checked="checked" />
+                                <span>W</span>
+                                
+                                <input type="text" name="attr_subject" placeholder="Subject"/>
+        
+                                <div class="extended-content">
+                                    <div><textarea name="attr_note" placeholder="Note ..." /></textarea></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div><!-- end column -->
+                
             </div>
-        </div>
-    </div>
-</div>
+        </div><!-- end info tab-->
+        
+        <div class="tab-content tab-spells">
+        </div><!--end spells tab -->
+    </div><!-- end content -->
+</div><!-- end wrapper -->
