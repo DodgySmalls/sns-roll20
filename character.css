@@ -798,46 +798,46 @@ div.sheet-content {
 input.sheet-tab {
     position: absolute;
     top: -25px;
+    height: 25px;
     width: 75px;
     margin: 0;
-    visibility: hidden;
+    opacity: 0;
+    z-index: 4;
 }
 
-input.sheet-tab-main {
+input.sheet-tab-main, input.sheet-tab-main + span {
     right: 330px;
-    z-index: -4;
+    z-index: 3;
 }
 
-input.sheet-tab-inventory {
+input.sheet-tab-inventory, input.sheet-tab-inventory + span {
     right: 250px;
-    z-index: -3;
 }
 
-input.sheet-tab-levels {
+input.sheet-tab-levels, input.sheet-tab-levels + span {
     right: 170px;
-    z-index: -2;
 }
 
-input.sheet-tab-info {
+input.sheet-tab-info, input.sheet-tab-info + span {
     right: 90px;
-    z-index: -1;
 }
 
-input.sheet-tab-spells {
+input.sheet-tab-spells, input.sheet-tab-spells + span {
     right: 10px;
-    z-index: -2;
 }
 
-input.sheet-tab::before {
+input.sheet-tab + span {
     visibility: visible;
+    position: absolute;
     display: block;
     width: 71px;
+    top: -25px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin-left:2px;
     text-align: center;
+    margin-left: 2px;
     font-size: 0.8em;
     text-transform: uppercase;
     border: solid 2px #333333;
@@ -845,29 +845,10 @@ input.sheet-tab::before {
     background-color: #333333;
     height: 15px;
     padding-top: 5px;
+    z-index: 1;
 }
 
-input.sheet-tab-main::before {
-    content: "main";
-}
-
-input.sheet-tab-inventory::before {
-    content: "inventory";
-}
-
-input.sheet-tab-levels::before {
-    content: "levels";
-}
-
-input.sheet-tab-info::before {
-    content: "info";
-}
-
-input.sheet-tab-spells::before {
-    content: "spells";
-}
-
-input.sheet-tab:checked::before {
+input.sheet-tab:checked + span {
     z-index: 2;
     border: solid 2px var(--fgaccent);
     border-bottom: solid 3px var(--bgc);
