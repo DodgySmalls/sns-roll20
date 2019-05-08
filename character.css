@@ -207,45 +207,53 @@ hr {
     color: var(--fgstamina);
 }
 
-.sheet-resource-fate label input::after {
-    display: none;
-}
-
 .sheet-resource-fate {
     display: flex;
     flex-direction: row-reverse;
 }
 
-.sheet-resource-fate input {
-    transform: scale(1.2);
-    margin-right: 20px;
-    visibility: hidden;
-    
+.sheet-resource-fate label {
+    width: 30px;    
 }
 
-.sheet-resource-fate input::after {
-    background-color: #000000;
-    border-radius: 12px;
-    visibility: visible;
+.sheet-resource-fate input {
+    width: 26px;
+    height: 27px;
+    margin-right: 6px;
+    opacity: 0;
+    z-index: 4;
+}
+
+.sheet-resource-fate input + span {
     position: relative;
-    right: 4px;
-    top: 3px;
+    z-index: 0;
+}
+
+.sheet-resource-fate input + span div {
+    background-color: #000000;
+    
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 21px;
+    border-radius: 13px;
     content:"t";
     font-family:"dicefontd20";
     font-size: 1.5em;
     color: #444444;
     transition: all 0.3s ease;
-    padding:3px;
-    padding-top:2px;
     font-weight: bold;
-    margin-left: 4px;
+    padding-left: 4px;
+    padding-bottom: 6px;
 }
 
-.sheet-resource-fate input:checked::after {
+.sheet-resource-fate input:checked + span div {
     color: var(--fgaccent);
 }
 
-.sheet-resource-fate input:checked ~ input::after {
+.sheet-resource-fate input:checked ~ input + span div {
     color: var(--fgaccent);
 }
 
