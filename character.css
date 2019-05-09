@@ -375,6 +375,11 @@ hr {
 /**************************************
     Weapons
 **************************************/
+
+.sheet-weapon-wrapper {
+    position: relative;
+}
+
 .sheet-weapon-melee-content {
     display: none;
 }
@@ -393,41 +398,39 @@ hr {
 }
 
 
-.sheet-weapon-melee-flag, .sheet-weapon-ranged-flag {
-    position:relative;
-    visibility:hidden;
-    margin-left: 3px;
-}
 
-.sheet-weapon-melee-flag::after, .sheet-weapon-ranged-flag::after {
-    display: block;
-    visibility: visible;
+input.sheet-weapon-melee-flag, input.sheet-weapon-ranged-flag {
     position: absolute;
-    top:-5px;
-    left:-5px;
-    width:18px;
-    height:17px;
-    padding-top: 2px;
-    text-align:center;
-    transition: all 0.3s ease-out;
-    color: #FFFFFF;
-    background-color: #000000;
-    border-radius: 9px;
+    opacity: 0;
+    flex-grow: 1;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
 }
 
-.sheet-weapon-melee-flag:checked::after, .sheet-weapon-ranged-flag:checked::after {
+input.sheet-weapon-melee-flag + div, input.sheet-weapon-ranged-flag + div {
+    z-index: 0;
+    position: absolute;
+    top: 5px;
+    visibility: visible;
+    font-size: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+input.sheet-weapon-melee-flag +  div, input.sheet-weapon-melee-flag {
+    right: 45px;
+}
+input.sheet-weapon-ranged-flag + div, input.sheet-weapon-ranged-flag {
+    right: 30px;
+}
+
+.sheet-weapon-melee-flag:checked +  div, .sheet-weapon-ranged-flag:checked +  div {
     color:var(--fgaccent);
     background: none;
 }
-
-.sheet-weapon-melee-flag::after {
-    content: "M";
-}
-
-.sheet-weapon-ranged-flag::after {
-    content: "R";
-}
-
 
 /**************************************
     Armour
