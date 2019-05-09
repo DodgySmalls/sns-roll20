@@ -294,33 +294,40 @@ hr {
     color: #FFFFFF;
 }
 
+.sheet-resource-confidence input + span {
+    position: relative;
+}
+
 .sheet-resource-confidence input {
     position: relative;
     display: block;
-    visibility: hidden;
+    opacity: 0;
     flex-grow: 1;
-    margin-top: 10px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
 }
 
-.sheet-resource-confidence input::after {
+.sheet-resource-confidence input + span div {
+    z-index: 0;
     position: absolute;
-    left: 0;
-    top: -7px;
+    left: 5px;
+    bottom: 0;
     visibility: visible;
     width: 100%;
     font-family: 'dicefontd4';
     font-size: 24px;
-    content: "A";
     text-align: center;
     color: #FFFFFF;
     transition: all 0.3s ease;
 }
 
-.sheet-resource-confidence input:checked::after {
+.sheet-resource-confidence input:checked + span div {
     color: var(--fgaccent);
 }
 
-.sheet-resource-confidence input:checked ~ input::after {
+.sheet-resource-confidence input:checked ~ input + span div {
     color: var(--fgaccent);
 }
 
