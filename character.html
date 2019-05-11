@@ -375,15 +375,18 @@
                         <input type="text" name="attr_global_armour_adjust" placeholder="tmp" class="text-number val-adjust"/>
                         
                     
-                        Global Evasion <input type="number" name="attr_global_evasion" value="(@{dex} + 5)" disabled />
-                        <input type="number" name="attr_global_evasion_max" value="10" disabled style="display:none;"/>
+                        Evasion <input type="number" name="attr_global_evasion" value="(((@{global_evasion_uncapped} + @{evasion_cap}) - abs(@{global_evasion_uncapped} - @{evasion_cap})) / 2)" disabled />
+                        <input type="number" name="attr_global_evasion_uncapped" value="(@{dex} + 5 + @{evasion_adjust})" disabled style="display:none;" />
                         <input type="text" name="attr_evasion_adjust" placeholder="tmp" class="text-number val-adjust" />
-                            
+                        
                         <br/>        
                         
                         Global Defense
                         <input type="number" name="attr_global_defense"
                             value="(ceil(@{toughness} + @{global_armour} + @{global_evasion}))" disabled class="def global-def centered-number"/>
+                            
+                        Evasion Cap    
+                        <input type="text" name="attr_evasion_cap" placeholder="cap" value="10" class="text-number" />
                         
                         <br/>
                         Footspeed: <input type="number" name="attr_footspeed" value="5"/>m
