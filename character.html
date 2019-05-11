@@ -325,7 +325,7 @@
 
                         <div class="armour-slot armour-head">
                             <span class="header-small-caps">Head</span>
-                            <input type="number" name="attr_head_defense" value="(@{toughness} + @{head_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_head_defense" value="(ceil(@{toughness} + @{head_armour} + @{global_evasion}))" disabled class="def centered-number"/>
                             <input type="number" name="attr_head_armour" value="(@{local_head_item_armour} + @{local_head_armour_adjust})" disabled style="display:none;" />
                             <input type="text" name="attr_local_head_item_armour" placeholder="L" class="text-number armour-local" /><input type="text" name="attr_global_head_item_armour" placeholder="G" class="text-number armour-global" />
                             <input type="text" name="attr_local_head_armour_adjust" placeholder="tmp" class="text-number val-adjust" />
@@ -336,7 +336,7 @@
                         
                         <div class="armour-slot armour-body">
                             <span class="header-small-caps">Body</span>
-                            <input type="number" name="attr_body_defense" value="(@{toughness} + @{body_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_body_defense" value="(ceil(@{toughness} + @{body_armour} + @{global_evasion}))" disabled class="def centered-number"/>
                             <input type="number" name="attr_body_armour" value="(@{local_body_item_armour} + @{local_body_armour_adjust})" disabled style="display:none;" />
                             <input type="text" name="attr_local_body_item_armour" placeholder="L" class="text-number armour-local" /><input type="text" name="attr_global_body_item_armour" placeholder="G" class="text-number armour-global" />
                             <input type="text" name="attr_local_body_armour_adjust" placeholder="tmp" class="text-number val-adjust" />
@@ -347,7 +347,7 @@
                         
                         <div class="armour-slot armour-hand">
                             <span class="header-small-caps">Hand</span>
-                            <input type="number" name="attr_hand_defense" value="(@{toughness} + @{hand_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_hand_defense" value="(ceil(@{toughness} + @{hand_armour} + @{global_evasion}))" disabled class="def centered-number"/>
                             <input type="number" name="attr_hand_armour" value="(@{local_hand_item_armour} + @{local_hand_armour_adjust})" disabled style="display:none;" />
                             <input type="text" name="attr_local_hand_item_armour" placeholder="L" class="text-number armour-local"/><input type="text" name="attr_global_hand_item_armour" placeholder="G" class="text-number armour-global"/>
                             <input type="text" name="attr_local_hand_armour_adjust" placeholder="tmp" class="text-number val-adjust" />
@@ -358,7 +358,7 @@
                         
                         <div class="armour-slot armour-foot">
                             <span class="header-small-caps">Foot</span>
-                            <input type="number" name="attr_hand_defense" value="(@{toughness} + @{hand_armour} + @{global_evasion})" disabled class="def centered-number"/>
+                            <input type="number" name="attr_hand_defense" value="(ceil(@{toughness} + @{hand_armour} + @{global_evasion}))" disabled class="def centered-number"/>
                             <input type="number" name="attr_foot_armour" value="(@{local_foot_item_armour} + @{local_foot_armour_adjust})" disabled style="display:none;" />
                             <input type="text" name="attr_local_foot_item_armour" placeholder="L" class="text-number armour-local" /><input type="text" name="attr_global_foot_item_armour" placeholder="G" class="text-number armour-global" />
                             <input type="text" name="attr_local_foot_armour_adjust" placeholder="tmp" class="text-number val-adjust"/>
@@ -375,15 +375,15 @@
                         <input type="text" name="attr_global_armour_adjust" placeholder="tmp" class="text-number val-adjust"/>
                         
                     
-                        Global Evasion <input type="number" name="attr_global_evasion" value="(@{dex})" disabled />
-                        <input type="number" name="attr_global_evasion_max" value="9" disabled style="display:none;"/>
+                        Global Evasion <input type="number" name="attr_global_evasion" value="(@{dex} + 5)" disabled />
+                        <input type="number" name="attr_global_evasion_max" value="10" disabled style="display:none;"/>
                         <input type="text" name="attr_evasion_adjust" placeholder="tmp" class="text-number val-adjust" />
                             
                         <br/>        
                         
                         Global Defense
                         <input type="number" name="attr_global_defense"
-                            value="(@{toughness} + @{global_armour} + @{global_evasion})" disabled class="def global-def centered-number"/>
+                            value="(ceil(@{toughness} + @{global_armour} + @{global_evasion}))" disabled class="def global-def centered-number"/>
                         
                         <br/>
                         Footspeed: <input type="number" name="attr_footspeed" value="5"/>m
