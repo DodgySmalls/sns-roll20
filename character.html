@@ -1,3 +1,155 @@
+<script type="text/worker">
+const attributes = ["str", "dex", "for", "int", "cog", "ard"];
+const aptitudes = ["agility", "alertness", "athletics", "brawn", "charisma", "conviction", "coordination", 
+                    "endurance", "finesse", "focus", "initiative", "insight", "intuition", "knowledge", "logic",
+                    "reflexes", "resilience", "scrutiny", "willpower", "wisdom", "wit"];
+                    
+const aptitudeDefaults = {
+    "agility_mj": "dex",
+    "agility_mn": "str",
+    "alertness_mj": "cog",
+    "alertness_mn": "dex",
+    "athletics_mj": "str",
+    "athletics_mn": "for",
+    "brawn_mj": "str",
+    "brawn_mn": "str",
+    "charisma_mj": "ard",
+    "charisma_mn": "int",
+    "conviction_mj": "ard",
+    "conviction_mn": "ard",
+    "coordination_mj": "dex",
+    "coordination_mn": "str",
+    "endurance_mj": "for",
+    "endurance_mn": "str",
+    "finesse_mj": "dex",
+    "finesse_mn": "dex",
+    "focus_mj": "cog",
+    "focus_mn": "for",
+    "initiative_mj": "ard",
+    "initiative_mn": "dex",
+    "insight_mj": "cog",
+    "insight_mn": "ard",
+    "intuition_mj": "cog",
+    "intuition_mn": "cog",
+    "knowledge_mj": "int",
+    "knowledge_mn": "cog",
+    "logic_mj": "int",
+    "logic_mn": "int",
+    "reflexes_mj": "dex",
+    "reflexes_mn": "int",
+    "resilience_mj": "for",
+    "resilience_mn": "for",
+    "scrutiny_mj": "cog",
+    "scrutiny_mn": "int",
+    "willpower_mj": "ard",
+    "willpower_mn": "str",
+    "wisdom_mj": "cog",
+    "wisdom_mn": "int",
+    "wit_mj": "int",
+    "wit_mn": "ard"
+};
+                    
+function updateAptitudes() {
+    getAttrs(
+        attributes,
+        function(attrValues){
+            attrValues.str = parseInt(attrValues.str);
+            attrValues.dex = parseInt(attrValues.dex);
+            attrValues.for = parseInt(attrValues.for);
+            attrValues.int = parseInt(attrValues.int);
+            attrValues.cog = parseInt(attrValues.cog);
+            attrValues.ard = parseInt(attrValues.ard);
+            
+            for(let i=0; i < aptitudes.length; i++) {
+                updateAptitude(aptitudes[i], attrValues);
+            }
+        }
+    );   
+}
+
+function updateAptitude(apt, attributes = null) {
+    let major = apt + "_mj";
+    let minor = apt + "_mn";
+    let adjust = apt + "_adjust";
+    let override = apt + "_override";
+        
+    getAttrs(
+        [major, minor, adjust, override],
+        function(values) {
+            if(values.hasOwnProperty(major)) {
+                values[major] = parseInt(values[major]);
+            }
+            
+            if(values.hasOwnProperty(minor)) {
+                values[minor] = parseInt(values[major]);
+            }
+            
+            if(values.hasOwnProperty(adjust)) {
+                values[adjust] = parseInt(values[adjust]);
+            } else {
+                values[adjust] = 0;
+            }
+            
+            if(values.hasOwnProperty(override)) {
+                values[override] = parseInt(values[override]);
+            }
+            
+            //if an override is defined immediately ignore other options and resolve the value to the override value
+            if(values.hasOwnProperty(override)) {
+                let update = {};
+                update[apt] = Math.ceil(values[override]);
+                setAttrs(update);
+            }
+            
+            //if no override is present, calculate the value of the aptitude
+            let mjAttr = values.hasOwnProperty(major) ? values[major] : aptitudeDefaults[major];
+            let mnAttr = values.hasOwnProperty(minor) ? values[minor] : aptitudeDefaults[minor];
+        
+            if(attributes != null) {
+                let update = {};
+                update[apt] = Math.ceil(values[adjust] + ((attributes[mjAttr] + attributes[mnAttr]) / 2));
+                setAttrs(update);
+            } else {
+                getAttrs(
+                    attributes,
+                    function(attrValues) {
+                        let update = {};
+                        update[apt] = Math.ceil(values[adjust] + ((attrValues[mjAttr] + attrValues[mnAttr]) / 2));
+                        setAttrs(update);
+                    }
+                );
+            }
+            
+        }
+    );
+}
+
+on("change:str", function(eventInfo) {
+    updateAptitudes();
+});
+
+on("change:dex", function(eventInfo) {
+    updateAptitudes();
+});
+
+on("change:for", function(eventInfo) {
+    updateAptitudes();
+});
+
+on("change:int", function(eventInfo) {
+    updateAptitudes();
+});
+
+on("change:cog", function(eventInfo) {
+    updateAptitudes();
+});
+
+on("change:ard", function(eventInfo) {
+    updateAptitudes();
+});
+
+</script>
+
 <div class="wrapper">
     <div class="header">
         <table>
@@ -168,27 +320,27 @@
                             <div class="attributes">
                                 <h3>Attributes</h3>
                                 <div class="attribute">
-                                    <input type="number" name="attr_str" class="centered-number" />
+                                    <input type="number" name="attr_str" value="-2" class="centered-number" />
                                     <div class="attribute-title">Strength</div>
                                 </div>
                                 <div class="attribute">
-                                    <input type="number" name="attr_dex" class="centered-number" />
+                                    <input type="number" name="attr_dex" value="-2" class="centered-number" />
                                     <div class="attribute-title">Dexterity</div>
                                 </div>
                                 <div class="attribute">
-                                    <input type="number" name="attr_for" class="centered-number" />
+                                    <input type="number" name="attr_for" value="-2" class="centered-number" />
                                     <div class="attribute-title">Fortitude</div>
                                 </div>
                                 <div class="attribute">
-                                    <input type="number" name="attr_int" class="centered-number" />
+                                    <input type="number" name="attr_int" value="-2" class="centered-number" />
                                     <div class="attribute-title">Intellect</div>
                                 </div>
                                 <div class="attribute">
-                                    <input type="number" name="attr_cog" class="centered-number" />
+                                    <input type="number" name="attr_cog" value="-2" class="centered-number" />
                                     <div class="attribute-title">Cognizance</div>
                                 </div>
                                 <div class="attribute">
-                                    <input type="number" name="attr_ard" class="centered-number" />
+                                    <input type="number" name="attr_ard" value="-2" class="centered-number" />
                                     <div class="attribute-title">Ardor</div>
                                 </div>
                                 
@@ -197,83 +349,83 @@
                             <div class="column aptitudes">
                                 <h3>Aptitudes</h3>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_brawn" value="(@{str})" disabled />
+                                    <input type="number" name="attr_brawn"  />
                                     Brawn
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_finesse" value="(@{dex})" disabled />
+                                    <input type="number" name="attr_finesse" />
                                     Finesse
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_resilience" value="(@{for})" disabled />
+                                    <input type="number" name="attr_resilience" />
                                     Resilience
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_athletics" value="(ceiling((@{str} + @{dex})/2))" disabled />
+                                    <input type="number" name="attr_athletics" />
                                     Athletics
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_athletics" value="(ceiling((@{dex} + @{str})/2))" disabled />
+                                    <input type="number" name="attr_athletics" />
                                     Agility
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_coordination" value="(ceiling((@{dex} + @{str})/2))" disabled />
+                                    <input type="number" name="attr_coordination" />
                                     Coordination
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_coordination" value="(ceiling((@{for} + @{str})/2))" disabled />
+                                    <input type="number" name="attr_coordination" />
                                     Endurance
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_focus" value="(ceiling((@{cog} + @{for})/2))" disabled />
+                                    <input type="number" name="attr_focus"/>
                                     Focus
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_alertness" value="(ceiling((@{cog} + @{dex})/2))" disabled />
+                                    <input type="number" name="attr_alertness" />
                                     Alertness
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_reflexes" value="(ceiling((@{dex} + @{int})/2))" disabled />
+                                    <input type="number" name="attr_reflexes" />
                                     Reflexes
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_willpower" value="(ceiling((@{ard} + @{str})/2))" disabled />
+                                    <input type="number" name="attr_willpower" />
                                     Willpower
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_initiative" value="(ceiling((@{ard} + @{dex})/2))" disabled />
+                                    <input type="number" name="attr_initiative" />
                                     Initiative
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_knowledge" value="(ceiling((@{int} + @{cog})/2))" disabled />
+                                    <input type="number" name="attr_knowledge" />
                                     Knowledge
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_charisma" value="(ceiling((@{ard} + @{int})/2))" disabled />
+                                    <input type="number" name="attr_charisma" />
                                     Charisma
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_wisdom" value="(ceiling((@{cog} + @{int})/2))" disabled />
+                                    <input type="number" name="attr_wisdom" />
                                     Wisdom
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_scrutiny" value="(ceiling((@{cog} + @{int})/2))" disabled />
+                                    <input type="number" name="attr_scrutiny" />
                                     Scrutiny
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_wit" value="(ceiling((@{int} + @{ard})/2))" disabled />
+                                    <input type="number" name="attr_wit" />
                                     Wit
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_logic" value="(@{int})" disabled />
+                                    <input type="number" name="attr_logic" />
                                     Logic
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_intuition" value="(@{cog})" disabled />
+                                    <input type="number" name="attr_intuition" />
                                     Intuition
                                 </div>
                                 <div class="aptitude">
-                                    <input type="number" name="attr_conviction" value="(@{ard})" disabled />
+                                    <input type="number" name="attr_conviction" />
                                     Conviction
                                 </div>
                             </div>
